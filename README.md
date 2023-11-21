@@ -1,16 +1,51 @@
-# e_commerce_ui
+# Flutter E-Commerce UI
 
-A new Flutter project.
+Welcome to the Flutter E-Commerce UI project! This is a stunning E-Commerce user interface built using Flutter and powered by the Provider for state management.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![Screenshot 1](https://i.postimg.cc/5QcJbd1m/0.jpg)](https://postimg.cc/5QcJbd1m)
+[![Screenshot 2](https://i.postimg.cc/kBmCHmTJ/01.jpg)](https://postimg.cc/kBmCHmTJ)
+[![Screenshot 3](https://i.postimg.cc/2V7YRKt4/02.jpg)](https://postimg.cc/2V7YRKt4)
+[![Screenshot 4](https://i.postimg.cc/dDdvn1mN/04.jpg)](https://postimg.cc/dDdvn1mN)
+[![Screenshot 5](https://i.postimg.cc/tnhjgS4G/05.jpg)](https://postimg.cc/tnhjgS4G)
+[![Screenshot 6](https://i.postimg.cc/Z9R4LxV6/06.jpg)](https://postimg.cc/Z9R4LxV6)
+[![Screenshot 7](https://i.postimg.cc/9DcWDh98/07.jpg)](https://postimg.cc/9DcWDh98)
+[![Screenshot 8](https://i.postimg.cc/G4zbY5Jc/08.jpg)](https://postimg.cc/G4zbY5Jc)
+[![Screenshot 9](https://i.postimg.cc/5XPMjFby/09.jpg)](https://postimg.cc/5XPMjFby)
+[![Screenshot 10](https://i.postimg.cc/BLFWhYDP/10.jpg)](https://postimg.cc/BLFWhYDP)
+[![Screenshot 11](https://i.postimg.cc/SYLB4ngy/11.jpg)](https://postimg.cc/SYLB4ngy)
+[![Screenshot 12](https://i.postimg.cc/gnDCB6ws/12.jpg)](https://postimg.cc/gnDCB6ws)
+[![Screenshot 13](https://i.postimg.cc/mtBxwSrh/13.jpg)](https://postimg.cc/mtBxwSrh)
+[![Screenshot 14](https://i.postimg.cc/kVVL41TY/14.jpg)](https://postimg.cc/kVVL41TY)
+[![Screenshot 15](https://i.postimg.cc/XGdhKZSw/15.jpg)](https://postimg.cc/XGdhKZSw)
+[![Screenshot 16](https://i.postimg.cc/nXhy8cBJ/16.jpg)](https://postimg.cc/nXhy8cBJ)
+[![Screenshot 17](https://i.postimg.cc/HrvfTD97/17.jpg)](https://postimg.cc/HrvfTD97)
+[![Screenshot 18](https://i.postimg.cc/3yPVDX68/18.jpg)](https://postimg.cc/3yPVDX68)
+[![Screenshot 19](https://i.postimg.cc/BP3zmq4R/19.jpg)](https://postimg.cc/BP3zmq4R)
+[![Screenshot 20](https://i.postimg.cc/H8thKfLn/20.jpg)](https://postimg.cc/H8thKfLn)
+[![Screenshot 21](https://i.postimg.cc/vDL8bTgg/21.jpg)](https://postimg.cc/vDL8bTgg)
+[![Screenshot 22](https://i.postimg.cc/8jpp5GMy/22.jpg)](https://postimg.cc/8jpp5GMy)
+[![Screenshot 23](https://i.postimg.cc/jLMsn1hR/23.jpg)](https://postimg.cc/jLMsn1hR)
+[![Screenshot 24](https://i.postimg.cc/DSm7rcCL/24.jpg)](https://postimg.cc/DSm7rcCL)
+[![Screenshot 25](https://i.postimg.cc/McQx4pJG/25.jpg)](https://postimg.cc/McQx4pJG)
+[![Screenshot 26](https://i.postimg.cc/FdXmQXhV/26.jpg)](https://postimg.cc/FdXmQXhV)
+[![Screenshot 27](https://i.postimg.cc/ft7szqLn/27.jpg)](https://postimg.cc/ft7szqLn)
+[![Screenshot 28](https://i.postimg.cc/s1czbLq5/28.jpg)](https://postimg.cc/s1czbLq5)
+[![Screenshot 29](https://i.postimg.cc/MXxxPwPW/29.jpg)](https://postimg.cc/MXxxPwPW)
+[![Screenshot 30](https://i.postimg.cc/zV2rGgJB/30.jpg)](https://postimg.cc/zV2rGgJB)
+[![Screenshot 31](https://i.postimg.cc/bZGjDwJR/31.jpg)](https://postimg.cc/bZGjDwJR)
+[![Screenshot 32](https://i.postimg.cc/qN9H8H6H/32.jpg)](https://postimg.cc/qN9H8H6H)
+[![Screenshot 33](https://i.postimg.cc/MMwkF0Ys/33.jpg)](https://postimg.cc/MMwkF0Ys)
+[![Screenshot 34](https://i.postimg.cc/R6Tr53sv/34.jpg)](https://postimg.cc/R6Tr53sv)
+[![Screenshot 35](https://i.postimg.cc/FkFM9983/35.jpg)](https://postimg.cc/FkFM9983)
+[![Screenshot 36](https://i.postimg.cc/nCPyJfk9/36.jpg)](https://postimg.cc/nCPyJfk9)
+[![Screenshot 37](https://i.postimg.cc/pyqNsF5Z/37.jpg)](https://postimg.cc/pyqNsF5Z)
+[![Screenshot 38](https://i.postimg.cc/dL1bpV8K/38.jpg)](https://postimg.cc/dL1bpV8K)
+[![Screenshot 39](https://i.postimg.cc/TK5Z2N77/39.jpg)](https://postimg.cc/TK5Z2N77)
+[![Screenshot 40](https://i.postimg.cc/B8WRj5Rq/40.jpg)](https://postimg.cc/B8WRj5Rq)
+[![Screenshot 41](https://i.postimg.cc/rdS3x0L5/41.jpg)](https://postimg.cc/rdS3x0L5)
+[![Screenshot 42](https://i.postimg.cc/jCqmnS3J/42.jpg)](https://postimg.cc/jCqmnS3J)
+[![Screenshot 43](https://i.postimg.cc/BthyTfR7/43.jpg)](https://postimg.cc/BthyTfR7)
+[![Screenshot 44](https://i.postimg.cc/Czz2J6gh/44.jpg)](https://postimg.cc/Czz2J6gh)
+[![Screenshot 45](https://i.postimg.cc/bsWB5HyQ/45.jpg)](https://postimg.cc/bsWB5HyQ)
