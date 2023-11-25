@@ -3,7 +3,6 @@ import 'package:e_commerce_ui/src/features/cart/widgets/check_out_container.dart
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
@@ -14,10 +13,8 @@ class CurrentOrderTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = Constants.getScreenWidth(context);
-    final bool darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+    final darkMode =
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Consumer<CartProvider>(
       builder: (context, cartProvider, child) {
         return Scaffold(
@@ -100,76 +97,83 @@ class CurrentOrderTab extends StatelessWidget {
                                 SizedBox(
                                   height: 12.h,
                                 ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      '\$${item.price}',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                            inherit: true,
-                                            color: AppColors.darkGreyShade,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
-                                    SizedBox(
-                                      width: screenWidth * 0.28,
-                                    ),
-                                    Row(
-                                      children: <Widget>[
-                                        GestureDetector(
-                                          onTap: () => {
-                                            cartProvider.decrementItemQuantity(
-                                              item: item,
-                                            )
-                                          },
-                                          child: Icon(
-                                            Icons
-                                                .indeterminate_check_box_outlined,
-                                            size: 22.w,
-                                            color: AppColors.darkGreyShade
-                                                .withOpacity(
-                                              darkMode ? 0.8 : 0.4,
+                                SizedBox(
+                                  width: screenWidth * 0.6,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        '\$${item.price}',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              inherit: true,
+                                              color: AppColors.darkGreyShade,
+                                              fontWeight: FontWeight.bold,
                                             ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          width: 8.w,
-                                        ),
-                                        Text(
-                                          item.quantity.toString(),
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge!
-                                              .copyWith(
-                                                inherit: true,
-                                                fontWeight: FontWeight.bold,
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: <Widget>[
+                                            GestureDetector(
+                                              onTap: () => {
+                                                cartProvider
+                                                    .decrementItemQuantity(
+                                                  item: item,
+                                                )
+                                              },
+                                              child: Icon(
+                                                Icons
+                                                    .indeterminate_check_box_outlined,
+                                                size: 22.w,
+                                                color: AppColors.darkGreyShade
+                                                    .withOpacity(
+                                                  darkMode ? 0.8 : 0.4,
+                                                ),
                                               ),
-                                        ),
-                                        SizedBox(
-                                          width: 8.w,
-                                        ),
-                                        GestureDetector(
-                                          onTap: () => {
-                                            cartProvider.incrementItemQuantity(
-                                              item: item,
-                                            )
-                                          },
-                                          child: Icon(
-                                            Icons.add_box_outlined,
-                                            size: 22.w,
-                                            color: AppColors.darkGreyShade
-                                                .withOpacity(
-                                              darkMode ? 0.8 : 0.4,
                                             ),
-                                          ),
+                                            SizedBox(
+                                              width: 8.w,
+                                            ),
+                                            Text(
+                                              item.quantity.toString(),
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyLarge!
+                                                  .copyWith(
+                                                    inherit: true,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                            ),
+                                            SizedBox(
+                                              width: 8.w,
+                                            ),
+                                            GestureDetector(
+                                              onTap: () => {
+                                                cartProvider
+                                                    .incrementItemQuantity(
+                                                  item: item,
+                                                )
+                                              },
+                                              child: Icon(
+                                                Icons.add_box_outlined,
+                                                size: 22.w,
+                                                color: AppColors.darkGreyShade
+                                                    .withOpacity(
+                                                  darkMode ? 0.8 : 0.4,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 SizedBox(
                                   height: 8.h,

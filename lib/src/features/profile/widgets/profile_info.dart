@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
 
@@ -18,17 +16,18 @@ class ProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(value.toString(),
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  inherit: true,
-                  color: AppColors.primaryColor,
-                  fontWeight: FontWeight.w500,
-                ),),
+        Text(
+          value.toString(),
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                inherit: true,
+                color: AppColors.primaryColor,
+                fontWeight: FontWeight.w700,
+              ),
+        ),
         SizedBox(
           height: 8.h,
         ),

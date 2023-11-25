@@ -3,9 +3,7 @@ import 'package:e_commerce_ui/src/models/product.dart';
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import 'product_tile_widget.dart';
@@ -24,18 +22,14 @@ class ProductsListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = Constants.getScreenHeight(context);
     final screenWidth = Constants.getScreenWidth(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 4.h),
+      margin: EdgeInsets.symmetric(vertical: 2.h),
       padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
-        borderRadius: BorderRadius.circular(12.w),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,17 +64,16 @@ class ProductsListTile extends StatelessWidget {
           ),
           SizedBox(height: 8.h),
           Container(
-            height: screenHeight * 0.28,
             color: Colors.transparent,
-            child: ListView.builder(
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              itemCount: products.length,
-              itemBuilder: (context, index) {
-                final product = products[index];
-                return ProductTileWidget(
-                  product: product,
-                );
-              },
+              child: Row(
+                children: products
+                    .map(
+                      (product) => ProductTileWidget(product: product),
+                    )
+                    .toList(),
+              ),
             ),
           ),
         ],

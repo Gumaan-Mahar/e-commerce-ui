@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 
 class NotificationsBadgeWidget extends StatelessWidget {
@@ -15,15 +13,13 @@ class NotificationsBadgeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Stack(
       alignment: Alignment.topRight,
       children: [
         Icon(
           Icons.notifications,
-          size: 36.w,
+          size: 28.w,
           color: AppColors.primaryColor,
         ),
         Container(

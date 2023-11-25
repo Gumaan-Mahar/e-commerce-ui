@@ -2,10 +2,6 @@ import 'package:e_commerce_ui/src/core/constants.dart';
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
-
-import '../../../core/app_data_provider.dart';
-
 
 class SearchAppBar extends StatelessWidget {
   const SearchAppBar({Key? key}) : super(key: key);
@@ -14,19 +10,19 @@ class SearchAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = Constants.getScreenWidth(context);
     final screenHeight = Constants.getScreenHeight(context);
-    final bool darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark;
+    final darkMode =
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return AppBar(
       backgroundColor: darkMode ? AppColors.darkShade : AppColors.lightShade,
       title: Row(
         children: [
           Container(
-            height: screenHeight * 0.065,
+            height: screenHeight * 0.06,
             decoration: BoxDecoration(
               color: darkMode ? AppColors.darkShade : AppColors.lightShade,
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(30.w),
               border: Border.all(
-                color: Colors.grey.shade300,
+                color: AppColors.darkGreyShade.withOpacity(0.2),
               ),
             ),
             child: Row(
@@ -36,6 +32,7 @@ class SearchAppBar extends StatelessWidget {
                   icon: Icon(
                     Icons.search,
                     color: AppColors.darkGreyShade,
+                    size: 22.w,
                   ),
                   onPressed: () {},
                 ),

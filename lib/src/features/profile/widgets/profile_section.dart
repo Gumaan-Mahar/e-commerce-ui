@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
 import 'profile_info.dart';
@@ -12,13 +10,14 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(
-        16.w,
+      padding: EdgeInsets.only(
+        right: 16.w,
+        left: 16.w,
+        top: 40.h,
+        bottom: 16.h,
       ),
       decoration: BoxDecoration(
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
@@ -45,16 +44,14 @@ class ProfileSection extends StatelessWidget {
                     children: [
                       Text(
                         'Gumaan Mahar',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                              inherit: true,
-                              fontWeight: FontWeight.w500,
-                              color: darkMode
-                                  ? AppColors.lightShade
-                                  : AppColors.darkShade,
-                            ),
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  inherit: true,
+                                  fontWeight: FontWeight.w500,
+                                  color: darkMode
+                                      ? AppColors.lightShade
+                                      : AppColors.darkShade,
+                                ),
                       ),
                       SizedBox(
                         height: 2.h,
@@ -93,7 +90,7 @@ class ProfileSection extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.all(
-                  12.w,
+                  8.w,
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -108,7 +105,7 @@ class ProfileSection extends StatelessWidget {
                 child: Icon(
                   Icons.settings,
                   color: Colors.blue,
-                  size: 28.w,
+                  size: 22.w,
                 ),
               ),
             ],

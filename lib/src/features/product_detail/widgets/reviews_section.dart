@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 
 class RatingsAndReviewsSection extends StatelessWidget {
@@ -12,56 +10,52 @@ class RatingsAndReviewsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
-            vertical: 8.h,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Ratings & Reviews',
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Text(
+                  'Ratings & Reviews',
+                  style: TextStyle(
+                    fontSize: 18.sp,
+                    fontWeight: FontWeight.bold,
+                    color:
+                        darkMode ? AppColors.lightShade : AppColors.darkShade,
+                  ),
+                ),
+                SizedBox(
+                  width: 4.w,
+                ),
+                Text(
+                  '($totalRatings)',
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    color: Colors.grey,
+                  ),
+                ),
+              ],
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'View All',
                 style: TextStyle(
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.bold,
-                  color: darkMode ? AppColors.lightShade : AppColors.darkShade,
+                  fontSize: 14.sp,
+                  color: Colors.blue,
                 ),
               ),
-              Row(
-                children: [
-                  Text(
-                    'Total ($totalRatings)',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 4.w,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'View All',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
           itemCount: 5,
           itemBuilder: (context, index) {
             String username = 'User $index';
@@ -71,8 +65,10 @@ class RatingsAndReviewsSection extends StatelessWidget {
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 
             return Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: EdgeInsets.symmetric(
+                horizontal: 8.w,
+                vertical: 8.h,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

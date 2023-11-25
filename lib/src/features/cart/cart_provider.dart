@@ -13,8 +13,10 @@ class CartProvider extends ChangeNotifier {
   }
 
   void incrementItemQuantity({required CartItem item}) {
-    item.quantity += 1;
-    notifyListeners();
+    if (item.quantity < 10) {
+      item.quantity += 1;
+      notifyListeners();
+    }
   }
 
   double calculateTotalPrice(List<CartItem> items) {

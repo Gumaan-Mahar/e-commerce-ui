@@ -2,7 +2,6 @@ import 'package:e_commerce_ui/src/features/notifications/notifications_provider.
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
@@ -26,13 +25,16 @@ class OrderNotificationContainer extends StatelessWidget {
     final screenWidth = Constants.getScreenWidth(context);
     final notificationProvider = Provider.of<NotificationsProvider>(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 4.h,),
-      padding: EdgeInsets.all(8.w,),
+      margin: EdgeInsets.only(
+        bottom: 4.h,
+      ),
+      padding: EdgeInsets.all(
+        8.w,
+      ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.w,),
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
         boxShadow: [
           BoxShadow(

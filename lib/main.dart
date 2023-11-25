@@ -1,4 +1,3 @@
-import 'package:e_commerce_ui/src/core/constants.dart';
 import 'package:e_commerce_ui/src/features/cart/cart_screen.dart';
 import 'package:e_commerce_ui/src/themes/themes.dart';
 
@@ -50,15 +49,8 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    double screenWidth = Constants.getScreenWidth(context);
-    double screenHeight = Constants.getScreenHeight(context);
-
+  Widget build(BuildContext context) {  
     return ScreenUtilInit(
-      designSize: Size(
-        screenWidth,
-        screenHeight,
-      ),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
@@ -85,7 +77,7 @@ class MainPage extends StatelessWidget {
           return IndexedStack(
             index: appData.currentIndex,
             children: const [
-              HomeScreen(),
+              HomeScreen(), 
               ExploreScreen(),
               CartScreen(),
               ProfileScreen(),

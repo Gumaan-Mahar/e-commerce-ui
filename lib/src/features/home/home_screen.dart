@@ -1,7 +1,7 @@
 import 'package:e_commerce_ui/src/features/home/home_provider.dart';
 import 'package:e_commerce_ui/src/features/home/widgets/banner_images_widget.dart';
-import 'package:e_commerce_ui/src/features/home/widgets/notifications_badge.dart';
 import 'package:e_commerce_ui/src/features/home/widgets/deals_list_tile.dart';
+import 'package:e_commerce_ui/src/features/home/widgets/notifications_badge.dart';
 import 'package:e_commerce_ui/src/features/home/widgets/primary_actions.dart';
 import 'package:e_commerce_ui/src/features/home/widgets/products_list_tile.dart';
 import 'package:e_commerce_ui/src/features/notifications/notifications_screen.dart';
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.qr_code_scanner,
-              size: 30.w,
+              size: 26.w,
             ),
           ),
           GestureDetector(
@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 4.h,
+                  height: 2.h,
                 ),
                 ProductsListTile(
                   title: 'Trending Now',
