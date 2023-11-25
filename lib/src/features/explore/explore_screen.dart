@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/app_data_provider.dart';
 import 'widgets/categories_section.dart';
 import 'widgets/popular_brands_section.dart';
 
@@ -27,10 +26,8 @@ class ExploreScreen extends StatelessWidget {
       body: Consumer<ExploreProvider>(
         builder: (context, exploreProvider, child) {
           final double screenHeight = Constants.getScreenHeight(context);
-          final bool darkMode =
-              Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-                  ? true
-                  : false;
+          final darkMode =
+              Theme.of(context).brightness == Brightness.dark ? true : false;
           return SafeArea(
             child: SingleChildScrollView(
               child: Column(
@@ -39,12 +36,10 @@ class ExploreScreen extends StatelessWidget {
                     height: 4.h,
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 4.h),
                     padding: EdgeInsets.all(12.w),
                     decoration: BoxDecoration(
                       color:
                           darkMode ? AppColors.darkShade : AppColors.lightShade,
-                      borderRadius: BorderRadius.circular(12.w),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,6 +70,12 @@ class ExploreScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             OutlinedButton.icon(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                  color:
+                                      AppColors.darkGreyShade.withOpacity(0.2),
+                                ),
+                              ),
                               onPressed: () {},
                               icon: Icon(
                                 Icons.camera_alt_outlined,
@@ -92,6 +93,12 @@ class ExploreScreen extends StatelessWidget {
                               ),
                             ),
                             OutlinedButton.icon(
+                              style: OutlinedButton.styleFrom(
+                                side: BorderSide(
+                                  color:
+                                      AppColors.darkGreyShade.withOpacity(0.2),
+                                ),
+                              ),
                               onPressed: () {},
                               icon: Icon(
                                 Icons.photo_outlined,
@@ -114,14 +121,13 @@ class ExploreScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 4.h,
+                    height: 2.h,
                   ),
                   Container(
-                    height: screenHeight * 0.33,
+                    height: screenHeight * 0.36,
                     decoration: BoxDecoration(
                       color:
                           darkMode ? AppColors.darkShade : AppColors.lightShade,
-                      borderRadius: BorderRadius.circular(12.w),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,14 +155,13 @@ class ExploreScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 8.h,
+                    height: 2.h,
                   ),
                   Container(
                     height: screenHeight * 0.26,
                     decoration: BoxDecoration(
                       color:
                           darkMode ? AppColors.darkShade : AppColors.lightShade,
-                      borderRadius: BorderRadius.circular(12.w),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -185,7 +190,7 @@ class ExploreScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 8.h,
+                    height: 2.h,
                   ),
                   const ExploreMoreSection(),
                 ],

@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 
 class QAndASection extends StatelessWidget {
@@ -11,13 +9,13 @@ class QAndASection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
+            horizontal: 8.w,
             vertical: 8.h,
           ),
           child: Row(
@@ -51,6 +49,7 @@ class QAndASection extends StatelessWidget {
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
           itemCount: 5,
           itemBuilder: (context, index) {
             String question = 'Is this product available in different colors?';
@@ -121,9 +120,15 @@ class QAndASection extends StatelessWidget {
           },
         ),
         Padding(
-          padding: EdgeInsets.all(16.w),
+          padding: EdgeInsets.all(8.w),
           child: OutlinedButton(
             onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              foregroundColor: AppColors.primaryColor,
+              side: BorderSide(
+                color: AppColors.primaryColor,
+              ),
+            ),
             child: const Text('Ask a Question'),
           ),
         ),

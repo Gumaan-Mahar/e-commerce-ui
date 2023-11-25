@@ -1,4 +1,3 @@
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/global_imports.dart';
@@ -12,7 +11,10 @@ class CategoryChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 4.h,),
+      padding: EdgeInsets.symmetric(
+        vertical: 4.h,
+        horizontal: 8.w,
+      ),
       decoration: BoxDecoration(
         color: AppColors.primaryColor,
         borderRadius: BorderRadius.circular(2.w),
@@ -32,6 +34,8 @@ class CategoryChip extends StatelessWidget {
       child: Center(
         child: Text(
           category,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyle(
             color: AppColors.lightShade,
             fontWeight: FontWeight.bold,

@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
 
@@ -11,13 +9,10 @@ class DeliverySpecsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       decoration: BoxDecoration(
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
-        borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
@@ -44,7 +39,7 @@ class DeliverySpecsContainer extends StatelessWidget {
               'Standard Delivery',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
+                fontSize: 14.sp,
               ),
             ),
             subtitle: RichText(
@@ -86,7 +81,7 @@ class DeliverySpecsContainer extends StatelessWidget {
               '14 days free & easy return',
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
+                fontSize: 14.sp,
               ),
             ),
             subtitle: Text(

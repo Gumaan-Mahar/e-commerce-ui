@@ -12,7 +12,7 @@ class AppDataProvider extends ChangeNotifier {
   }
 
   // ThemeMode
-  ThemeMode _themeMode = ThemeMode.system;
+  ThemeMode _themeMode = ThemeMode.light;
 
   ThemeMode get themeMode => _themeMode;
 

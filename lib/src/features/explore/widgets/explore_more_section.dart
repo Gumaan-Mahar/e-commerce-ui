@@ -3,9 +3,7 @@ import 'package:e_commerce_ui/src/features/product_detail/product_detail_screen.
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../models/product.dart';
 
@@ -101,9 +99,7 @@ class ExploreMoreSectionScreenState extends State<ExploreMoreSection> {
   Widget build(BuildContext context) {
     final screenHeight = Constants.getScreenHeight(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       color: darkMode ? AppColors.darkShade : AppColors.lightShade,
       padding: EdgeInsets.all(
@@ -166,7 +162,7 @@ class ExploreMoreSectionScreenState extends State<ExploreMoreSection> {
                     ),
                     child: ProductTileWidget(
                       product: product,
-                      imageHeight: screenHeight * 0.22,
+                      imageHeight: screenHeight * 0.195,
                     ),
                   ),
                 );

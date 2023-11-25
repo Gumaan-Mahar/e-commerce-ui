@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/features/product_detail/product_detail_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import '../../../methods/calculate_price_after_discount.dart';
@@ -22,9 +20,7 @@ class ProductTileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     final screenWidth = Constants.getScreenWidth(context);
     final screenHeight = Constants.getScreenHeight(context);
     return GestureDetector(

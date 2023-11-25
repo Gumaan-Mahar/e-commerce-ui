@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
@@ -29,11 +27,9 @@ class DealCard extends StatelessWidget {
     final screenHeight = Constants.getScreenHeight(context);
     final screenWidth = Constants.getScreenWidth(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
-      width: screenWidth * 0.56,
+      width: screenWidth * 0.6,
       margin: EdgeInsets.only(right: 4.w),
       padding: EdgeInsets.all(4.w),
       decoration: BoxDecoration(
@@ -53,6 +49,7 @@ class DealCard extends StatelessWidget {
                 crossAxisCount: 2,
                 childAspectRatio: 1,
               ),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 4,
               itemBuilder: (context, index) {
                 return Container(
@@ -70,6 +67,14 @@ class DealCard extends StatelessWidget {
           ),
           SizedBox(height: 4.h),
           CategoryChip(category: dealName),
+          // Text(
+          //   dealName,
+          //   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+          //         inherit: true,
+          //         color: AppColors.primaryColor,
+          //         fontWeight: FontWeight.bold,
+          //       ),
+          // ),
           SizedBox(height: 4.h),
           Container(
             padding: EdgeInsets.symmetric(
@@ -101,7 +106,7 @@ class DealCard extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontSize: 12.sp,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
               color: AppColors.primaryColor,
             ),
           ),

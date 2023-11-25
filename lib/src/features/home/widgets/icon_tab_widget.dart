@@ -20,10 +20,10 @@ class IconTab extends StatelessWidget {
             shape: BoxShape.circle,
             color: primaryColor.withOpacity(0.2),
           ),
-          padding: EdgeInsets.all(8.0.w),
+          padding: EdgeInsets.all(12.0.w),
           child: Icon(
             icon,
-            size: 30.w,
+            size: 22.w,
             color: primaryColor,
           ),
         ),
@@ -36,6 +36,7 @@ class IconTab extends StatelessWidget {
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
                   inherit: true,
                   fontWeight: FontWeight.w600,
+                  fontSize: 10.sp,
                 ),
           ),
         ),

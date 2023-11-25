@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 
 class SettingContainer extends StatefulWidget {
@@ -27,9 +25,7 @@ class SettingContainerState extends State<SettingContainer> {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Column(
       children: [
         ListTile(
@@ -44,7 +40,9 @@ class SettingContainerState extends State<SettingContainer> {
             children: [
               Icon(
                 widget.icon,
-                color: darkMode ? AppColors.lightShade : AppColors.darkShade,
+                color: darkMode
+                    ? AppColors.lightShade
+                    : AppColors.darkShade.withOpacity(0.3),
                 size: 28.w,
               ),
               SizedBox(
@@ -56,6 +54,7 @@ class SettingContainerState extends State<SettingContainer> {
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         fontWeight: FontWeight.w600,
                         inherit: true,
+                        fontSize: 12.sp,
                       ),
                 ),
               ),

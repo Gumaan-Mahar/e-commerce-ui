@@ -36,7 +36,7 @@ class ProductRatingsContainer extends StatelessWidget {
                 Text(
                   '$productRating / 5.0',
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

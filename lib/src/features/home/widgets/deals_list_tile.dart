@@ -1,9 +1,6 @@
-import 'package:e_commerce_ui/src/core/constants.dart';
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 import 'deal_card.dart';
 
@@ -21,17 +18,12 @@ class DealsListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = Constants.getScreenHeight(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       padding: EdgeInsets.all(8.w),
-      height: screenHeight * 0.52,
       decoration: BoxDecoration(
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
-        borderRadius: BorderRadius.circular(12.w),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,15 +43,15 @@ class DealsListTile extends StatelessWidget {
           ),
           SizedBox(height: 8.h),
           Container(
-            height: screenHeight * 0.42,
-            margin: EdgeInsets.symmetric(vertical: 4.h),
             decoration: BoxDecoration(
               color: darkMode ? AppColors.darkShade : AppColors.lightShade,
               borderRadius: BorderRadius.circular(12.w),
             ),
-            child: ListView(
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              children: deals,
+              child: Row(
+                children: deals.map((deal) => deal).toList(),
+              ),
             ),
           ),
         ],

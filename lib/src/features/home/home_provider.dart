@@ -25,10 +25,14 @@ class HomeProvider extends ChangeNotifier {
       if (_currentBannerIndex < bannerImages.length - 1) {
         pageController.nextPage(
           duration: const Duration(milliseconds: 500),
-          curve: Curves.easeOut,
+          curve: Curves.easeInOut,
         );
       } else {
-        pageController.jumpToPage(0);
+        pageController.animateTo(
+          0,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
       }
       _startAutoScroll();
     });

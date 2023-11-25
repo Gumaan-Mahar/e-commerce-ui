@@ -1,6 +1,5 @@
 // Light theme
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/global_imports.dart';
@@ -125,13 +124,13 @@ class AppThemes {
         size: 32.w,
         color: AppColors.primaryColor,
       ),
-      systemOverlayStyle: SystemUiOverlayStyle.light.copyWith(
-        statusBarColor: AppColors.lightShade,
-        statusBarBrightness: Brightness.dark,
-        statusBarIconBrightness: Brightness.dark,
-        systemNavigationBarColor: AppColors.lightShade,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      ),
+      // systemOverlayStyle: SystemUiOverlayStyle.light.copyWith(
+      //   statusBarColor: AppColors.lightShade,
+      //   statusBarBrightness: Brightness.dark,
+      //   statusBarIconBrightness: Brightness.dark,
+      //   systemNavigationBarColor: AppColors.lightShade,
+      //   systemNavigationBarIconBrightness: Brightness.dark,
+      // ),
     ),
 
     buttonTheme: ButtonThemeData(
@@ -263,13 +262,13 @@ class AppThemes {
         size: 32.w,
         color: AppColors.primaryColor,
       ),
-      systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
-        statusBarColor: AppColors.darkShade,
-        statusBarBrightness: Brightness.light,
-        statusBarIconBrightness: Brightness.light,
-        systemNavigationBarColor: AppColors.darkShade,
-        systemNavigationBarIconBrightness: Brightness.light,
-      ),
+      // systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
+      //   statusBarColor: AppColors.darkShade,
+      //   statusBarBrightness: Brightness.light,
+      //   statusBarIconBrightness: Brightness.light,
+      //   systemNavigationBarColor: AppColors.darkShade,
+      //   systemNavigationBarIconBrightness: Brightness.light,
+      // ),
     ),
 
     buttonTheme: ButtonThemeData(

@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/global_imports.dart';
 import '../../../themes/app_colors.dart';
 
@@ -17,9 +15,7 @@ class SubSettingContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return ListTile(
       title: Row(
         children: [
@@ -31,12 +27,14 @@ class SubSettingContainer extends StatelessWidget {
           SizedBox(
             width: 8.w,
           ),
-          Text(
-            label,
-            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  inherit: true,
-                  fontWeight: FontWeight.w500,
-                ),
+          Expanded(
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    inherit: true,
+                    fontWeight: FontWeight.w500,
+                  ),
+            ),
           ),
         ],
       ),

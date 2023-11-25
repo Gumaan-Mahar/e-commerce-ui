@@ -1,4 +1,3 @@
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/global_imports.dart';
@@ -26,7 +25,7 @@ class NotificationTypeContainer extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.all(
-              8.w,
+              12.w,
             ),
             decoration: BoxDecoration(
               color: backgorundColor,
@@ -39,7 +38,7 @@ class NotificationTypeContainer extends StatelessWidget {
             ),
             child: Icon(
               icon,
-              size: 32.w,
+              size: 22.w,
               color: AppColors.lightShade,
             ),
           ),

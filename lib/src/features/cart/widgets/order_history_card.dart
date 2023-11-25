@@ -1,7 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import '../../../models/cart_item.dart';
@@ -28,14 +26,15 @@ class OrderHistoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = Constants.getScreenWidth(context);
-    final bool darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark;
+    final darkMode =
+        Theme.of(context).brightness == Brightness.dark ? true : false;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 4.h,),
+      margin: EdgeInsets.only(
+        bottom: 4.h,
+      ),
       decoration: BoxDecoration(
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
-        borderRadius: BorderRadius.circular(12.w),
       ),
       child: Column(
         children: [

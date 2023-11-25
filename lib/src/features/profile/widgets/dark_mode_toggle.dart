@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/src/themes/app_colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 
@@ -18,9 +16,7 @@ class DarkModeToggle extends StatelessWidget {
     final screenHeight = Constants.getScreenHeight(context);
     final screenWidth = Constants.getScreenWidth(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Padding(
       padding: EdgeInsets.only(
         left: 16.w,

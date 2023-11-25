@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/app_data_provider.dart';
 import '../../../themes/app_colors.dart';
 import '../notifications_provider.dart';
 
@@ -24,9 +23,7 @@ class ChatNotificationContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final notificationProvider = Provider.of<NotificationsProvider>(context);
     final darkMode =
-        Provider.of<AppDataProvider>(context).themeMode == ThemeMode.dark
-            ? true
-            : false;
+        Theme.of(context).brightness == Brightness.dark ? true : false;
     return Container(
       margin: EdgeInsets.only(
         bottom: 4.h,
@@ -35,9 +32,6 @@ class ChatNotificationContainer extends StatelessWidget {
         8.w,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(
-          12.w,
-        ),
         color: darkMode ? AppColors.darkShade : AppColors.lightShade,
         boxShadow: [
           BoxShadow(
