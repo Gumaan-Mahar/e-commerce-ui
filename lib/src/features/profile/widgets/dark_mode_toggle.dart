@@ -30,7 +30,7 @@ class DarkModeToggle extends StatelessWidget {
             children: [
               Icon(
                 Icons.brightness_4_outlined,
-                color: darkMode ? AppColors.lightShade : AppColors.darkShade,
+                color: darkMode ? AppColors.lightShade : AppColors.darkShade.withOpacity(0.3),
                 size: 28.w,
               ),
               SizedBox(

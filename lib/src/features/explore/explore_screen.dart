@@ -124,7 +124,7 @@ class ExploreScreen extends StatelessWidget {
                     height: 2.h,
                   ),
                   Container(
-                    height: screenHeight * 0.36,
+                    height: screenHeight * 0.38,
                     decoration: BoxDecoration(
                       color:
                           darkMode ? AppColors.darkShade : AppColors.lightShade,

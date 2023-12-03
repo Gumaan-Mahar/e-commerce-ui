@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:e_commerce_ui/src/features/product_detail/product_detail_provider.dart';
 import 'package:e_commerce_ui/src/features/product_detail/widgets/add_to_cart_bottom_sheet.dart';
 import 'package:e_commerce_ui/src/features/product_detail/widgets/delivery_specs_container.dart';
@@ -279,9 +281,9 @@ class ProductDetailPageState extends State<ProductDetailPage> {
           },
         ),
         bottomNavigationBar: Container(
-          height: 80.h,
+          height: Platform.isIOS ? 80.h : 66.h,
           padding:
-              EdgeInsets.only(top: 8.h, left: 16.w, right: 16.w, bottom: 16.h),
+              EdgeInsets.only(top: 8.h, left: 16.w, right: 16.w, bottom: 8.h),
           decoration: BoxDecoration(
             color: darkMode ? AppColors.darkShade : AppColors.lightShade,
             boxShadow: [
@@ -301,8 +303,9 @@ class ProductDetailPageState extends State<ProductDetailPage> {
                   Column(
                     children: [
                       Icon(
-                        Icons.storefront_outlined,
+                        Icons.storefront,
                         color: AppColors.primaryColor,
+                        size: 24.w,
                       ),
                       Text(
                         'Store',
@@ -318,6 +321,7 @@ class ProductDetailPageState extends State<ProductDetailPage> {
                       Icon(
                         Icons.chat,
                         color: AppColors.primaryColor,
+                        size: 24.w,
                       ),
                       Text(
                         'Chat',

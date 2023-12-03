@@ -1,5 +1,6 @@
 import 'package:e_commerce_ui/src/features/explore/explore_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/constants.dart';
 import '../../../core/global_imports.dart';
 import 'category_card.dart';
 
@@ -12,8 +13,9 @@ class CategoriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = Constants.getScreenHeight(context);
     return SizedBox(
-      height: 200.h,
+      height: screenHeight * 0.3,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Column(

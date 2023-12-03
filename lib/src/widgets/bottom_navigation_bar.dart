@@ -28,12 +28,12 @@ class BottomNavigationBarWrapper extends StatelessWidget {
           ),
           child: BottomNavigationBar(
             currentIndex: appData.currentIndex,
-            type: BottomNavigationBarType.fixed,
+            type: BottomNavigationBarType.shifting,
             selectedIconTheme: IconThemeData(
-              size: 26.sp,
+              size: 30.sp,
             ),
             unselectedIconTheme: IconThemeData(
-              size: 26.sp,
+              size: 30.sp,
             ),
             selectedFontSize: 14.sp,
             unselectedFontSize: 14.sp,
